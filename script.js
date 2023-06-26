@@ -4,13 +4,13 @@ let tieMsg = 'Tie';
 let moveDisplays = document.querySelectorAll(".move-display h2");
 let moveList = ['Rock', 'Paper', 'Scissors'];
 let btns = document.querySelectorAll("button");
-let moves = {}
+let moves = {};
 
 let startGame = () =>{
     document.getElementById("status-head").innerHTML = "Choose";
     for (i = 0; i < btns.length; i++) {
         btns[i].removeEventListener("click", startGame);
-        btns[i].addEventListener("click", endGame)
+        btns[i].addEventListener("click", endGame);
         btns[i].style.visibility = 'visible';
         btns[i].innerHTML = moveList[i];
         btns[i].style.display = 'inline-block';
@@ -30,7 +30,7 @@ let endGame = (event) =>{
         btns[i].style.visibility = 'hidden';
     }
     document.querySelectorAll("button")[1].innerHTML = "Play Again";
-    btns[1].addEventListener("click", startGame)
+    btns[1].addEventListener("click", startGame);
     for (i = 0; i < moveDisplays.length; i++) {
         moveDisplays[i].style.visibility = 'visible';
     }
@@ -40,7 +40,7 @@ let endGame = (event) =>{
 }
 
 let randomMove = () =>{
-    return Math.floor(Math.random() * 3)
+    return Math.floor(Math.random() * 3);
 }
 
 let calculate = (move1, move2) =>{
